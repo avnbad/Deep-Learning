@@ -50,14 +50,6 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 classifier.fit(X_train, y_train, batch_size = 10, nb_epoch = 100)
 
 
-# Fitting XGBoost to the Training set #accuracy=0.8107899731992727 std=0.011912047519692425
-"""import xgboost as xgb
-from xgboost import XGBClassifier
-classifier = XGBClassifier()
-classifier.fit(X_train, y_train)"""
-
-
-
 # Part 3 - Making the predictions and evaluating the model
 
 # Predicting the Test set results
@@ -69,12 +61,6 @@ y_pred = (y_pred > 0.5)
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
-
-# Applying k-Fold Cross Validation for Xgboost
-from sklearn.model_selection import cross_val_score
-accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
-accuracies.mean()
-accuracies.std()
 
 
 # Evaluating the ANN
