@@ -1,5 +1,4 @@
 # Step 1: 
-#load the data set
 import numpy
 from keras.datasets import imdb
 from matplotlib import pyplot
